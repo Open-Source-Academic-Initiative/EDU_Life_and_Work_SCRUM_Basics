@@ -1,5 +1,6 @@
 <?php
-// Course backup WITHOUT user data (no users, enrolments, attempts, logs) — the campust → campus promotion rule.
+// Course backup WITHOUT user data (no users, enrolments, attempts, logs), e.g. to move a course from a staging
+// site to production.
 //   php backup_course.php <shortname> <destination.mbz>
 define('CLI_SCRIPT', true);
 require('/var/www/html/config.php');

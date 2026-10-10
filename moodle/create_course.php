@@ -1,10 +1,9 @@
 <?php
-// Creates the open course "El Scrum más Master del Restrepo" on a Moodle 4.5 site (built on campust, then
-// promoted to campus with a backup WITHOUT users — see README "Deploy to Moodle"). Same settings as the Calc
-// course HCNT (single-activity SCORM, self-enrolment) except completion = status "completed" and grading by
-// learning objects (the game reports completion only).
+// Creates the open course "El Scrum más Master del Restrepo" on a Moodle 4.5 site: a single-activity SCORM course
+// with self-enrolment, grading by learning objects and completion = status "completed" (the game reports
+// completion only). See README "Using it in Moodle".
 //   php create_course.php <scorm.zip> <course-image.png>
-// Run as the web user (campust: podman exec -u www-data moodle-app php …). Refuses to run twice.
+// Run as the web server user (e.g. sudo -u www-data php …). Refuses to run twice.
 define('CLI_SCRIPT', true);
 require('/var/www/html/config.php');
 require_once($CFG->dirroot . '/course/lib.php');
@@ -59,7 +58,7 @@ $fs->create_file_from_pathname(['contextid' => $ctx->id, 'component' => 'course'
     'itemid' => 0, 'filepath' => '/', 'filename' => 'el-scrum-mas-master-del-restrepo.png'], $img);
 echo "   course image stored\n";
 
-echo "== enrolment (as HCNT: manual + self enabled, guest disabled)\n";
+echo "== enrolment (manual + self enabled, guest disabled)\n";
 $self = enrol_get_plugin('self');
 $inst = $DB->get_record('enrol', ['courseid' => $course->id, 'enrol' => 'self']);
 if (!$inst) {
@@ -87,7 +86,7 @@ $mi = (object) [
         'format' => FORMAT_HTML, 'itemid' => 0],
     'showdescription' => 0, 'cmidnumber' => '', 'groupmode' => 0, 'groupingid' => 0,
     'scormtype' => SCORM_TYPE_LOCAL, 'packagefile' => $draft, 'updatefreq' => 0,
-    // display: as HCNT (current window, enter the content directly, no TOC, no course structure)
+    // display: current window, enter the content directly, no TOC, no course structure
     'popup' => 0, 'width' => 0, 'height' => 0, 'skipview' => SCORM_SKIPVIEW_FIRST, 'hidebrowse' => 0,
     'displaycoursestructure' => 0, 'hidetoc' => SCORM_TOC_DISABLED, 'nav' => 1,
     'navpositionleft' => -100, 'navpositiontop' => -100, 'displayattemptstatus' => 1,

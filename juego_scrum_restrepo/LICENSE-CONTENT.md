@@ -6,7 +6,6 @@ The educational content is licensed under the
 [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
 (full legal text: https://creativecommons.org/licenses/by-sa/4.0/legalcode). It covers:
 - the story, dialogue, decisions and feedback in `content/story.json`;
-- the course profiles in `content/profiles/`;
 - the characters and scene designs;
 - the share cards the game generates.
 

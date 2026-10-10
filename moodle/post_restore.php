@@ -1,6 +1,6 @@
 <?php
 // After restoring the course from a backup WITHOUT users: enrolment methods are not part of such a backup, so
-// re-apply the HCNT pattern (manual + self enabled with new enrolments allowed, guest disabled) and make it visible.
+// re-apply them (manual + self enabled with new enrolments allowed, guest disabled) and make the course visible.
 //   MOODLE_CONFIG=/path/to/config.php php post_restore.php <shortname>
 define('CLI_SCRIPT', true);
 require(getenv('MOODLE_CONFIG') ?: '/var/www/html/config.php');

@@ -1,0 +1,12 @@
+# build outputs (reproducible with scripts/)
+build/
+dist/
+__pycache__/
+*.pyc
+# office lock files
+.~lock.*#
+
+# local reference material (third-party course guides, templates, videos): not ours to relicense
+doc/
+# course profiles are local: they point to a course's own material (format: content/profiles/README.md)
+content/profiles/*.json

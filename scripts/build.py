@@ -1,16 +1,16 @@
 """Build the game: story data, SCORM manifest and zip package.
 
     python3 scripts/build.py            # full build -> dist/Juego_Scrum_Master_Restrepo_SCORM.zip (generic)
-                                        #   + one zip per course profile (e.g. ..._SENA_SCORM.zip)
+                                        #   + one zip per local course profile (..._<SUFFIX>_SCORM.zip)
     python3 scripts/build.py --no-zip   # refresh the package folder only (fast preview)
-    python3 scripts/build.py --no-zip --profile sena   # preview a course profile
+    python3 scripts/build.py --no-zip --profile <id>   # preview a course profile
     python3 scripts/build.py --check    # validate the story, write nothing
     python3 scripts/build.py --sim      # validate + print the game-balance simulation
 
 Inputs
     content/story.json         chapters, scenes, characters, decisions (Spanish, course-neutral)
-    content/profiles/*.json    optional course profiles: kicker, evidence per group, extra
-                               reference per decision (shown next to the Scrum Guide reference)
+    content/profiles/*.json    optional, local (not tracked) course profiles: kicker, evidence per
+                               group, extra reference per decision — see content/profiles/README.md
 Outputs (inside juego_scrum_restrepo/, the SCORM package root)
     js/story-data.js           generated from story.json
     imsmanifest.xml            SCORM 1.2 manifest listing every packaged file
@@ -20,7 +20,7 @@ Outputs (full build only)
                                challenge page, one page per ending (own Open Graph image),
                                jugar/ (open edition, playable without login), descargas/ (zip)
     The Open Graph images come from assets/og/ (see scripts/og_server.py).
-No third-party Python packages needed. Adapted from EDU_Life_and_Work_LibreOffice_Calc.
+No third-party Python packages needed.
 """
 
 import argparse
@@ -297,9 +297,9 @@ def write_landing(story, generic_zip):
             f.write(html)
     n = sum(len(fs) for _, _, fs in os.walk(out))
     print(f"\n🌐 Landing site: {os.path.relpath(out, ROOT)}/ ({n} files) -> {base}")
-    # the bundle for OpenSAIOrgPlatformDeploy/campus.opensai.org/deploy-reto-scrum-production-V1.sh
+    # a single archive of the site, handy for uploading it to a web server
     tarball = shutil.make_archive(out, "gztar", DIST, os.path.basename(out))
-    print(f"   + {os.path.relpath(tarball, ROOT)} (bundle for deploy-reto-scrum-production-V1.sh)")
+    print(f"   + {os.path.relpath(tarball, ROOT)}")
 
 
 # --------------------------------------------------------------- profiles
