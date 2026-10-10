@@ -1,0 +1,27 @@
+:root { --bg: #17131f; --panel: #fff8e7; --ink: #2b2335; --muted: #6b5f73; --line: #2b2335;
+  --yellow: #fcd116; --blue: #003893; --red: #ce1126; --green: #39a900;
+  --mono: ui-monospace, "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 var(--sans); }
+.flag { height: 12px; background: linear-gradient(var(--yellow) 0 50%, var(--blue) 50% 75%, var(--red) 75%); }
+main { max-width: 860px; margin: 0 auto; padding: 24px 16px 40px; }
+.card { background: var(--panel); border: 4px solid var(--line); box-shadow: 6px 6px 0 #0f0c15; padding: 20px; margin-bottom: 20px; }
+.kicker { font: bold 13px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--green); margin: 0 0 6px; }
+h1 { font: bold clamp(28px, 6vw, 44px)/1.1 var(--mono); color: var(--red); text-shadow: 3px 3px 0 var(--yellow); margin: 0 0 12px; }
+h2 { font: bold 20px var(--mono); color: var(--blue); margin: 0 0 10px; }
+.lead { font-size: 19px; font-weight: 600; }
+.hero img { display: block; width: 100%; height: auto; border: 3px solid var(--line); image-rendering: pixelated; margin: 14px 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 4px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font: bold 16px var(--mono); color: var(--ink); background: #fff;
+  border: 3px solid var(--line); padding: 10px 16px; text-decoration: none; box-shadow: 3px 3px 0 var(--line); }
+.btn:hover, .btn:focus-visible { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--line); background: #fff3c4; outline: none; }
+.btn.primary { background: var(--yellow); font-size: 18px; }
+ul, ol { padding-left: 22px; margin: 0; }
+li { margin: 6px 0; }
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.steps div { background: #fff; border: 3px solid var(--line); padding: 12px; }
+.steps b { display: block; font-family: var(--mono); color: var(--blue); }
+footer { color: #cfc6dc; font-size: 14px; text-align: center; padding: 0 16px 32px; }
+footer a { color: var(--yellow); }
+.small { font-size: 14px; color: var(--muted); }

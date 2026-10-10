@@ -1,0 +1,31 @@
+{
+  "id": "sena",
+  "zipSuffix": "SENA",
+  "kicker": "Reto Scrum · apoyo al programa SENA 22810043",
+  "label": "Programa SENA «Aplicación del marco de trabajo Scrum para proyectos de desarrollo de software» (22810043)",
+  "evidence": {
+    "backlog": "Evidencia AA1-EV01",
+    "roles": "Evidencia AA2-EV01",
+    "sprint": "Evidencia AA3-EV01",
+    "flujo": "Evidencia AA4-EV01"
+  },
+  "refs": {
+    "c1d1": "CF1 · 1.2 Entidades Scrum · Evidencia AA1-EV01",
+    "c1d2": "CF1 · 4.1 Product backlog (3 C) · Plantilla AA1-EV01",
+    "c1d3": "CF1 · 4.1 Product backlog (DEEP, iceberg)",
+    "c1d4": "CF1 · 1.2 Entidades Scrum (épicas, historias, tareas)",
+    "c2d1": "CF1 · 3 Roles (Product Owner)",
+    "c2d2": "CF1 · 3 Roles (Scrum Master)",
+    "c2d3": "CF1 · 3 Roles (Development Team) · Evidencia AA2-EV01",
+    "c2d4": "CF1 · 2 Ciclo de vida Scrum",
+    "c3d1": "CF2 · 1.2 Sprint planning · CF1 · 1.2 Velocidad",
+    "c3d2": "CF2 · 1.1 Sprint (Daily meeting)",
+    "c3d3": "CF1 · 1.1 Premisas Scrum (requisitos cambiantes) · CF2 · 1.1 Sprint",
+    "c3d4": "CF1 · 4.2 Sprint backlog (burndown, impedimentos)",
+    "c3d5": "CF2 · 1.2 Sprint planning (criterios de aceptación) · Guía Scrum: Definition of Done",
+    "c4d1": "CF2 · 4 Kanban · Evidencia AA4-EV01",
+    "c4d2": "CF2 · 4 Kanban · CF2 · 2.2 Diferentes métodos ágiles",
+    "c5d1": "CF2 · 1.3 Sprint review",
+    "c5d2": "CF1 · 2 Ciclo de vida (Sprint retrospective)"
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Graph cards</title>
+<style>
+  body { margin: 0; padding: 16px; font: 14px system-ui, sans-serif; background: #17131f; color: #fff; }
+  img { display: block; width: 100%; max-width: 600px; margin: 8px 0 16px; border: 2px solid #fff; }
+  #status { font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<!--
+  Development-only (not shipped). Served by scripts/og_server.py, which saves
+  each POSTed PNG to assets/og/. Uses the real game code, so the landing
+  previews always match the in-game share cards.
+-->
+<p id="status">Rendering…</p>
+<div id="out"></div>
+<script src="../juego_scrum_restrepo/js/story-data.js"></script>
+<script src="../juego_scrum_restrepo/js/pixel.js"></script>
+<script src="../juego_scrum_restrepo/js/cards.js"></script>
+<script>
+  (async function () {
+    var D = window.STORY, L = D.landing, footer = D.title + " · Reto Scrum · #" + D.hashtag;
+    var cards = [
+      ["reto", L.pages.reto, { headline: L.pages.reto.headline, phrase: L.pages.reto.cardPhrase }],
+      ["win", L.pages.win, { headline: D.endings.win.headline, phrase: D.endings.win.phrase }],
+      ["lose", L.pages.lose, { headline: D.endings.lose.headline, phrase: D.endings.lose.phrase }]
+    ];
+    var done = [];
+    for (var i = 0; i < cards.length; i++) {
+      var kind = cards[i][0], page = cards[i][1], o = cards[i][2];
+      o.footer = footer;
+      var cv = window.Cards.make(kind, o);
+      var blob = await new Promise(function (r) { cv.toBlob(r, "image/png"); });
+      var res = await fetch("/save/" + page.image, { method: "POST", body: blob });
+      var img = document.createElement("img");
+      img.src = cv.toDataURL("image/png");
+      img.alt = page.image;
+      document.getElementById("out").appendChild(img);
+      done.push(page.image + (res.ok ? " ✓" : " ✗ " + res.status));
+    }
+    document.getElementById("status").textContent = "done: " + done.join(" · ");
+  })();
+</script>
+</body>
+</html>
