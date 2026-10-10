@@ -30,13 +30,13 @@ Learner-facing text is Spanish (Colombia). Code and docs are in English.
 
 ## Chapters
 
-| Chapter | Scene (pixel art) | Scrum topics | SENA profile |
+| Chapter | Scene (pixel art) | Scrum topics | 
 |---|---|---|---|
-| 1 · El papayazo | Workshop interior | User stories, story quality, backlog ordering, epics | AA1-EV01 |
-| 2 · Armando el parche | Av. Primero de Mayo, TransMilenio station | Product Owner, Scrum Master, dev team, life cycle | AA2-EV01 |
-| 3 · Sprint 1 | Team office (Scrum board, burndown) | Sprint planning/velocity, daily, mid-sprint change, burndown, Definition of Done | AA3-EV01 |
-| 4 · El cuello de botella | Production floor (Kanban board) | WIP limits, Scrum vs Kanban | AA4-EV01 |
-| 5 · La demo en Monserrate | Monserrate summit | Sprint Review, Retrospective | AA4-EV01 |
+| 1 · El papayazo | Workshop interior | User stories, story quality, backlog ordering, epics |
+| 2 · Armando el parche | Av. Primero de Mayo, TransMilenio station | Product Owner, Scrum Master, dev team, life cycle |
+| 3 · Sprint 1 | Team office (Scrum board, burndown) | Sprint planning/velocity, daily, mid-sprint change, burndown, Definition of Done |
+| 4 · El cuello de botella | Production floor (Kanban board) | WIP limits, Scrum vs Kanban |
+| 5 · La demo en Monserrate | Monserrate summit | Sprint Review, Retrospective |
 
 Bogotá elements:
 - Monserrate and Guadalupe on the eastern hills, plus the cable car;
